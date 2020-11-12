@@ -1,3 +1,21 @@
+# Umovie : A basic movie listing application.
+
+You can search movies, and save them to your Watchlist or Watched pages.
+
+## Tech Stack
+
+This project is based on React Hooks, Context API and localStorage.
+Umovie uses TMDB(The Movie Database) API to get the movie information.
+
+## How it works?
+
+When you search a movie with the search input, it gets related movies on every input change.
+Maximum 20 movies fills the search list according to your keyword. (TMDB restriction)
+You can add any movie to your Watchlist, and then to your Watched page.
+Context API first controls the localStorage for the initialState.
+On every state change, your movie data is also sent to Localstorage.
+So even you refresh or leave the page, you can still see your Watchlist and Watched movies on your device.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
