@@ -23,8 +23,11 @@ export const Watchlist = () => {
                                         <MovieRenderer
                                             movie={movie}
                                             context={context}
-                                            onClick={() => { context.addMovieToWatched(movie); context.removeMovieFromWatchList(movie) }}
-                                            buttonText={'Add to Watched'} />
+                                            onClickAdd={() => { context.addMovieToWatched(movie); context.removeMovieFromWatchList(movie) }}
+                                            onClickRemove={() => { context.removeMovieFromWatchList(movie) }}
+                                            addText={'Add to Watched'}
+                                            removeText={'Remove'}
+                                        />
                                     </li>
                                 ))
                             }

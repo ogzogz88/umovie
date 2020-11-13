@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import DarkModeToggleSet from "./DarkModeToggleSet";
+
 
 const Header = () => {
 
@@ -19,7 +21,10 @@ const Header = () => {
                             <NavLink to='/watched' >Watched</NavLink>
                         </li>
                         <li>
-                            <Link to='/' className='btn'> + Add</Link>
+                            <Link to='/' className='btn'> Add</Link>
+                        </li>
+                        <li className="darkmode-button">
+                            <DarkModeToggleSet />
                         </li>
                     </ul>
 

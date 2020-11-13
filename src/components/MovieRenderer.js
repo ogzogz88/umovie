@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const MovieRenderer = ({ movie, onClick, buttonText }) => {
+export const MovieRenderer = ({ movie, onClickRemove, onClickAdd, removeText, addText }) => {
     return (
         <div>
             <div className='result-card'>
@@ -22,8 +22,11 @@ export const MovieRenderer = ({ movie, onClick, buttonText }) => {
 
                     </div>
                     <div className="controls">
-                        <button className="btn btn-add" onClick={() => onClick()}>
-                            {buttonText}
+                        <button className="btn btn-remove" onClick={() => onClickRemove()}>
+                            {removeText}
+                        </button>
+                        <button className="btn btn-add" onClick={() => onClickAdd()}>
+                            {addText}
                         </button>
                     </div>
                 </div>

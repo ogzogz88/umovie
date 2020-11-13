@@ -15,6 +15,7 @@ import './lib/font-awesome/css/all.min.css';
 import { GlobalProvider } from './context/GlobalState';
 
 
+
 function App() {
   return (
     <GlobalProvider>
@@ -26,9 +27,9 @@ function App() {
           <Route path='/watchlist'><Watchlist /></Route>
         </Switch>
         <BackToTop
-          backgroundColor='#bcbf0e'
+          backgroundColor='#21d07a'
           position={{ right: "2%", bottom: "10%" }}
-          hover={{ backgroundColor: '#21d07a', color: "#032541" }}
+          hover={{ backgroundColor: '#21d07a', color: "white" }}
           transition="all 0.5s"
           showOnDistance={0}
           borderRadius={5}

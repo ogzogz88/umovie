@@ -30,13 +30,14 @@ export const Add = () => {
             <div className='container'>
                 <div className='add-content'>
                     <div className='input-wrapper'>
-                        <input type='text' placeholder='Search for a movie.'
+                        <input
+                            type='text' placeholder='Search for a movie.'
                             value={query}
                             onChange={onChange}
                         />
                         <button className='btn btn-clear'
                             onClick={() => { setQuery('') }}
-                        ><i className='fas fa-sync-alt'></i></button>
+                        >CLEAR</button>
                     </div>
                 </div>
             </div>
