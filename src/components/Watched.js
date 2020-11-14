@@ -23,7 +23,7 @@ export const Watched = () => {
                                             onClickAdd={() => { context.addMovieToWatchList(movie); context.removeMovieFromWatched(movie) }}
                                             onClickRemove={() => { context.removeMovieFromWatched(movie) }}
                                             removeText={'Remove'}
-                                            addText={'Back to Watchlist'}
+                                            addText={'Move to Watchlist'}
 
                                         />
                                     </li>

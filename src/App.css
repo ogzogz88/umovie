@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
 :root {
     --primary: #032541;
+    --primary-dark: #302E8C;
     --primary-soft: #03254137;
     --secondary: #21d07a;
     --hover: #bcbf0e;
@@ -21,7 +22,7 @@ body.light-mode {
 }
 
 body.dark-mode {
-    background-color: #1a1919;
+    background-color: var(--primary-dark);
     color: #999;
 }
 
@@ -237,18 +238,18 @@ footer {
 /* Add Page */
 
 .add-content {
-    padding: 50px 0;
+    padding: 20px 0;
     max-width: 600px;
     margin: 0 auto;
 }
 
 body.light-mode .add-content .input-wrapper input {
     width: 100%;
-    background-color: var(--primary);
+    background-color: var(--primary-soft);
     padding: 10px;
     border-radius: 5px 0 0 5px;
     border: none;
-    color: var(--white);
+    color: var(--primary-dark);
     font-size: 1.25rem;
 }
 
@@ -262,12 +263,12 @@ body.dark-mode .add-content .input-wrapper input {
     font-size: 1.25rem;
 }
 
-body.dark-mode::placeholder.light-mode {
+body.dark-mode input::placeholder {
     color: var(--primary);
 }
 
-body.light-mode::placeholder.dark-mode {
-    color: var(--secondary);
+body.light-mode input::placeholder {
+    color: var(--primary-dark);
 }
 
 .input-wrapper {
@@ -454,7 +455,7 @@ hr {
 
 @media (min-width: 320px) {
     .container {
-        width: 300px;
+        min-width: 300px;
     }
 }
 
@@ -485,7 +486,7 @@ hr {
         font-size: 1rem;
     }
     .add-content {
-        padding: 30px 0;
+        padding: 10px 0;
     }
     .filled-list {
         margin-top: 0;

@@ -29,12 +29,12 @@ function App() {
         <BackToTop
           backgroundColor='#21d07a'
           position={{ right: "2%", bottom: "10%" }}
-          hover={{ backgroundColor: '#21d07a', color: "white" }}
+          hover={{ backgroundColor: '#21d07a', color: '#032541' }}
           transition="all 0.5s"
           showOnDistance={0}
           borderRadius={5}
           opacity="1"
-          color="white"
+          color="#032541"
           fontSize="1rem"
           icon="fas fa-arrow-up"
         // Other Props...
