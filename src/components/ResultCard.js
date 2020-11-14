@@ -9,7 +9,7 @@ export const ResultCard = ({ movie }) => {
     let storedMovieExists = watchlist.find(item => item.id === movie.id);
 
     return (
-        <div>
+        <>
             <div className='result-card'>
                 <div className="poster-wrapper">
                     {movie.poster_path ? (
@@ -41,6 +41,6 @@ export const ResultCard = ({ movie }) => {
                 </div>
             </div>
             <hr />
-        </div>
+        </>
     )
 }
