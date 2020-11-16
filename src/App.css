@@ -2,7 +2,7 @@
 :root {
     --primary: #032541;
     --primary-dark: #302E8C;
-    --primary-soft: #03254137;
+    --primary-soft: #0325411a;
     --secondary: #21d07a;
     --hover: #bcbf0e;
     --white: #fff;
@@ -22,7 +22,7 @@ body.light-mode {
 }
 
 body.dark-mode {
-    background-color: var(--primary-dark);
+    background-color: rgb(20, 19, 19);
     color: #999;
 }
 
@@ -163,7 +163,7 @@ header .nav-links {
 
 header .nav-links li {
     display: inline-block;
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
 header .nav-links li:last-child {
@@ -248,17 +248,37 @@ body.light-mode .add-content .input-wrapper input {
     background-color: var(--primary-soft);
     padding: 10px;
     border-radius: 5px 0 0 5px;
-    border: none;
+    border: solid 1px var(--primary-soft);
+    color: var(--primary-dark);
+    font-size: 1.25rem;
+}
+
+body.light-mode .add-content .input-wrapper input:focus {
+    width: 100%;
+    background-color: #fefefe;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: solid 1px var(--secondary);
     color: var(--primary-dark);
     font-size: 1.25rem;
 }
 
 body.dark-mode .add-content .input-wrapper input {
     width: 100%;
+    background-color: #c1bbbb;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: solid 1px var(--primary-soft);
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+body.dark-mode .add-content .input-wrapper input:focus {
+    width: 100%;
     background-color: var(--white);
     padding: 10px;
     border-radius: 5px 0 0 5px;
-    border: none;
+    border: solid 1px var(--secondary);
     color: var(--primary);
     font-size: 1.25rem;
 }
@@ -337,12 +357,20 @@ body.light-mode input::placeholder {
     margin-right: 10px;
 }
 
-hr {
+body.light-mode hr {
     margin-bottom: 3rem;
     width: 100%;
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(6, 235, 71, 0.1), rgba(31, 15, 204, 0.75), rgba(255, 255, 255, 0.1));
+}
+
+body.dark-mode hr {
+    margin-bottom: 3rem;
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(6, 235, 71, 0.1), rgba(239, 239, 243, 0.75), rgba(255, 255, 255, 0.1));
 }
 
 

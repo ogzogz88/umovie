@@ -66,7 +66,7 @@ export const Add = () => {
                 <div className='add-content'>
                     <div className='input-wrapper'>
                         <input
-                            type='text' placeholder='Search for a director, actor, actress.'
+                            type='text' placeholder='Search for a director or artist.'
                             value={queryPerson}
                             onChange={onChangePerson}
                         />

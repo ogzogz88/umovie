@@ -56,7 +56,7 @@ export const ResultCardPerson = ({ person }) => {
                             className='btn btn-remove'
                             onClick={(e) => handleClickMovieReset(e)}
                         >
-                            Remove Movies
+                            Collapse
                         </button>
                     </div>
                 </div>
