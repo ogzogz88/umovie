@@ -16,6 +16,10 @@ Context API first controls the localStorage for the initialState.
 On every state change, your movie data is also sent to Localstorage.
 So even you refresh or leave the page, you can still see your Watchlist and Watched movies on your device.
 
+## Live project
+
+It is deployed with surge and live at http://umovie.surge.sh/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
