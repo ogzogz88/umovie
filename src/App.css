@@ -170,7 +170,7 @@ header .nav-links li:last-child {
 }
 
 .header {
-  max-width: 300px;
+  max-width: 250px;
 }
 
 body.dark-mode .result-card .info .title {
