@@ -224,14 +224,14 @@ footer {
 }
 
 .footer-text {
-  margin: 0.5rem 0px;
+  margin: 0.25rem 0px;
   text-align: center;
 }
 
 .footer-wrapper {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 150px;
   padding: 0.5rem 1.5rem;
 }
 
@@ -532,6 +532,58 @@ body.dark-mode hr {
     border-radius: 0 5px 5px 0;
     font-size: 0.7rem;
     padding: 0.4rem 0.6rem;
+  }
+  body.light-mode input::placeholder {
+    font-size: 14px;
+  }
+  body.dark-mode input::placeholder {
+    font-size: 14px;
+  }
+}
+@media (max-width: 400px) {
+  header .inner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 0;
+  }
+  .brand {
+    display: none;
+  }
+  .add-content .input-wrapper input {
+    width: 100%;
+    background-color: var(--primary-soft);
+    padding: 3px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    color: var(--primary);
+    font-size: 1rem;
+  }
+  .add-content {
+    padding: 10px 0;
+  }
+  .filled-list {
+    margin-top: 0;
+  }
+  .btn-clear {
+    border-radius: 0 5px 5px 0;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+  }
+  body.light-mode input::placeholder,
+  body.dark-mode input::placeholder {
+    font-size: 12px;
+  }
+  header a {
+    font-size: 12px;
+  }
+  li > .btn {
+    padding: 3px 10px;
+    font-size: 1.1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
   }
 }
 
