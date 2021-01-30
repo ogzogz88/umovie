@@ -43,7 +43,7 @@ export const Add = () => {
         setQueryPerson(val);
         const URL = `https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-EN&query=${queryPerson}&page=1&include_adult=false`;
         fetchData(URL, setPeople);
-        //console.log(people);
+        console.log(people);
     }
 
 

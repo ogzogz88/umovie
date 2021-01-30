@@ -533,10 +533,16 @@ body.dark-mode hr {
     font-size: 0.7rem;
     padding: 0.4rem 0.6rem;
   }
-  body.light-mode input::placeholder {
+  body.light-mode input::placeholder,
+  body.dark-mode input::placeholder {
     font-size: 14px;
   }
-  body.dark-mode input::placeholder {
+  body.light-mode .add-content .input-wrapper input,
+  body.dark-mode .add-content .input-wrapper input {
+    font-size: 14px;
+  }
+  body.light-mode .add-content .input-wrapper input:focus,
+  body.dark-mode .add-content .input-wrapper input:focus {
     font-size: 14px;
   }
 }
@@ -573,6 +579,14 @@ body.dark-mode hr {
   }
   body.light-mode input::placeholder,
   body.dark-mode input::placeholder {
+    font-size: 12px;
+  }
+  body.light-mode .add-content .input-wrapper input,
+  body.dark-mode .add-content .input-wrapper input {
+    font-size: 12px;
+  }
+  body.light-mode .add-content .input-wrapper input:focus,
+  body.dark-mode .add-content .input-wrapper input:focus {
     font-size: 12px;
   }
   header a {
