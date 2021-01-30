@@ -16,11 +16,11 @@ export const ResultCardPerson = ({ person }) => {
                 } else setterFunc([]);
 
             });
-        console.log('person data:' + personData);
+        //console.log('person data:' + personData);
     }
     const handleClickMovie = (e, id) => {
         e.preventDefault();
-        console.log('person id: ' + id);
+        //console.log('person id: ' + id);
         const URL = `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`;
         fetchData(URL, setPersonData);
 

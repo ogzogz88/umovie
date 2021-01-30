@@ -4,7 +4,6 @@ import { ResultCard } from './ResultCard';
 export const PersonMovieRenderer = ({ personData, isDirector, isActor }) => {
 
     if (isDirector) {
-
         return (
             <div className="container movie-container">
                 <ul className="results">
@@ -17,17 +16,14 @@ export const PersonMovieRenderer = ({ personData, isDirector, isActor }) => {
                                     </li>
                                 );
                             }
-                            else return null;
-
-                        }
-                        )
+                            else return (<></>);
+                        })
                     }
                 </ul>
             </div >
 
         );
     } else if (isActor) {
-
         return (
             <div className="container movie-container">
                 <ul className="results">
@@ -42,5 +38,4 @@ export const PersonMovieRenderer = ({ personData, isDirector, isActor }) => {
             </div>
         );
     } else return (<></>);
-
 }
