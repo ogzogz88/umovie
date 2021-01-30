@@ -17,9 +17,9 @@ export const PersonMovieRenderer = ({ personData, isDirector, isActor }) => {
                                     </li>
                                 );
                             }
+                            else return null;
 
                         }
-
                         )
                     }
                 </ul>

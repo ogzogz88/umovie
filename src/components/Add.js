@@ -33,6 +33,8 @@ export const Add = () => {
         e.preventDefault();
         const val = e.target.value;
         setQuery(val);
+        console.log(val);
+        console.log(query);
         const URL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-EN&query=${query}&page=1&include_adult=false`;
         fetchData(URL, setMovies);
     }
@@ -43,7 +45,7 @@ export const Add = () => {
         setQueryPerson(val);
         const URL = `https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-EN&query=${queryPerson}&page=1&include_adult=false`;
         fetchData(URL, setPeople);
-        console.log(people);
+        //console.log(people);
     }
 
 
