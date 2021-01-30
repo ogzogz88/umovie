@@ -3,10 +3,11 @@ import { GlobalContext } from '../context/GlobalState';
 
 
 export const ResultCard = ({ movie }) => {
-    const { addMovieToWatchList, watchlist } = useContext(GlobalContext);
+    const { addMovieToWatchList, watchlist, watched } = useContext(GlobalContext);
 
     //prevent adding a movie more than one. we control the watchlist and if the movie exists, storedMovieExists = TRUE
-    let storedMovieExists = watchlist.find(item => item.id === movie.id);
+    let allMovies = [...watchlist, ...watched];
+    let storedMovieExists = allMovies.find(item => item.id === movie.id);
 
     return (
         <>
