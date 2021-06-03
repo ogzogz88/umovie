@@ -6,7 +6,7 @@ export const PersonMovieRenderer = ({ personData, personName }) => {
 
     return (
         <div className="container movie-container">
-            <div>deneme{ }</div>
+            <div>deneme{personName}</div>
             <ul className="results">
                 {
                     personData.map(movie => {

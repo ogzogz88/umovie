@@ -21,6 +21,7 @@ export const MovieWithId = ({ match }) => {
                 } else setterFunc([]);
             });
     };
+    console.log("before itemzz")
     const fetchPersonName = async (URL, setterFunc) => {
         await fetch(URL)
             .then(data => data.json())
@@ -29,7 +30,7 @@ export const MovieWithId = ({ match }) => {
                 console.log(items);
 
                 if (!items.errors) {
-                    setterFunc(items);
+                    setterFunc(items.name);
                     console.log(personName);
                 } else setterFunc("aa");
             });
