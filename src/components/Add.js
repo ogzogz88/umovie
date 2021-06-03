@@ -50,8 +50,6 @@ export const Add = () => {
         //used val instead of queryPerson. queryPerson gets the correct value BUT, the URL variable is not uptodate with it.
         const URL = `https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-EN&query=${val}&page=1&include_adult=false`;
         fetchData(URL, setPeople);
-        console.log(people);
-        addPeople(people);
 
     }
 

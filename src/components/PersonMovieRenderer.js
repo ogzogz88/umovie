@@ -6,6 +6,7 @@ export const PersonMovieRenderer = ({ personData }) => {
 
     return (
         <div className="container movie-container">
+            <div>deneme</div>
             <ul className="results">
                 {
                     personData.map(movie => {
