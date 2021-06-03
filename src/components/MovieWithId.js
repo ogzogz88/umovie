@@ -3,7 +3,7 @@ import { PersonMovieRenderer } from './PersonMovieRenderer';
 
 export const MovieWithId = ({ match }) => {
     const [personMovies, setPersonMovies] = useState([]);
-    const [personName, setPersonName] = useState([{ name: "ogz" }]);
+    const [personName, setPersonName] = useState([]);
     const fetchMovieData = async (URL, setterFunc) => {
         await fetch(URL)
             .then(data => data.json())
@@ -21,18 +21,13 @@ export const MovieWithId = ({ match }) => {
                 } else setterFunc([]);
             });
     };
-    console.log("before itemzz")
     const fetchPersonName = async (URL, setterFunc) => {
         await fetch(URL)
             .then(data => data.json())
             .then(items => {
-                console.log("itemssszz");
-                console.log(items);
-
                 if (!items.errors) {
                     setterFunc(items.name);
-                    console.log(personName);
-                } else setterFunc("aa");
+                } else setterFunc([]);
             });
     };
     const createMovieWithId = (id) => {
