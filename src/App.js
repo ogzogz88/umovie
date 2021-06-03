@@ -10,9 +10,10 @@ import Footer from './components/Footer';
 import { Watchlist } from './components/Watchlist';
 import { Watched } from './components/Watched';
 import { Add } from './components/Add';
+import { MovieWithId } from './components/MovieWithId';
+import { GlobalProvider } from './context/GlobalState';
 import './App.css';
 import './lib/font-awesome/css/all.min.css';
-import { GlobalProvider } from './context/GlobalState';
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/'><Add /></Route>
           <Route path='/watched'><Watched /></Route>
           <Route path='/watchlist'><Watchlist /></Route>
+          <Route path='/movies/:personId'>{({ match }) => <MovieWithId match={match} />}</Route>
         </Switch>
         <BackToTop
           backgroundColor='#21d07a'

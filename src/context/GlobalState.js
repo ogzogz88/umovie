@@ -4,6 +4,7 @@ import { AppReducer } from './AppReducer';
 const initialState = {
     watchlist: localStorage.getItem('watchlist') ? JSON.parse(localStorage.getItem('watchlist')) : [],
     watched: localStorage.getItem('watched') ? JSON.parse(localStorage.getItem('watched')) : [],
+    person: []
 };
 
 //create context
@@ -34,11 +35,23 @@ export const GlobalProvider = (props) => {
     const removeMovieFromWatched = (movie) => {
         dispatch({ type: 'REMOVE_MOVIE_FROM_WATCHED', payload: movie })
     }
+    const addPeople = (person) => {
+        dispatch({ type: 'ADD_PEOPLE', payload: person })
+    }
+    const removePeople = (person) => {
+        dispatch({ type: 'REMOVE_PEOPLE', payload: person })
+    }
 
 
     return (
         //addMovieToWatchList AND addMovieToWatchList:addMovieToWatchList is SAME HERE
-        <GlobalContext.Provider value={{ watchlist: state.watchlist, watched: state.watched, addMovieToWatchList, addMovieToWatched, removeMovieFromWatchList, removeMovieFromWatched }}>
+        <GlobalContext.Provider
+            value={{
+                watchlist: state.watchlist,
+                watched: state.watched,
+                person: state.person,
+                addMovieToWatchList, addMovieToWatched, removeMovieFromWatchList, removeMovieFromWatched, addPeople, removePeople
+            }}>
             {props.children}
         </GlobalContext.Provider>
     );

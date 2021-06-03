@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ResultCard } from './ResultCard';
 import { ResultCardPerson } from './ResultCardPerson';
+import { GlobalContext } from '../context/GlobalState';
+
 
 
 
@@ -10,6 +12,9 @@ export const Add = () => {
     const [movies, setMovies] = useState([]);
     const [people, setPeople] = useState([]);
     const [bestMovies, setBestMovies] = useState([]);
+
+    const { addPeople, removePeople } = useContext(GlobalContext);
+
 
     //fetching data only for the componentDidMount, so we used empty array [], as the second argument
     useEffect(() => {
@@ -45,7 +50,9 @@ export const Add = () => {
         //used val instead of queryPerson. queryPerson gets the correct value BUT, the URL variable is not uptodate with it.
         const URL = `https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-EN&query=${val}&page=1&include_adult=false`;
         fetchData(URL, setPeople);
-        //console.log(people);
+        console.log(people);
+        addPeople(people);
+
     }
 
 
