@@ -30,7 +30,7 @@ function App() {
         </Switch>
         <BackToTop
           backgroundColor='#21d07a'
-          position={{ right: "2%", bottom: "10%" }}
+          position={{ right: "2%", bottom: "2%" }}
           hover={{ backgroundColor: '#21d07a', color: '#032541' }}
           transition="all 0.5s"
           showOnDistance={0}
