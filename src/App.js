@@ -11,6 +11,7 @@ import { Watchlist } from './components/Watchlist';
 import { Watched } from './components/Watched';
 import { Add } from './components/Add';
 import { MovieWithId } from './components/MovieWithId';
+import ScrollToTop from './components/ScrollToTop';
 import { GlobalProvider } from './context/GlobalState';
 import './App.css';
 import './lib/font-awesome/css/all.min.css';
@@ -21,6 +22,7 @@ function App() {
   return (
     <GlobalProvider>
       <Router>
+        <ScrollToTop />
         <Header />
         <Switch>
           <Route exact path='/'><Add /></Route>
