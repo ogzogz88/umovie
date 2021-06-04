@@ -18,7 +18,7 @@ export const ResultCardPerson = ({ person }) => {
                     </div>
                     <div className="controls">
                         <Link to={`/movies/${person.id}`}>
-                            <button className="btn btn-add">Movies</button>
+                            <button className="btn btn-add btn-full-width">Movies</button>
                         </Link>
                     </div>
                 </div>
