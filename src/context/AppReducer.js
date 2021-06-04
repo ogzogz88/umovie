@@ -9,7 +9,7 @@ export function AppReducer(state, action) {
         case 'REMOVE_MOVIE_FROM_WATCHED':
             return { ...state, watched: state.watched.filter(movie => movie.id !== action.payload.id) };
         case 'ADD_PEOPLE':
-            return { ...state, person: [action.payload] };
+            return { ...state, person: action.payload };
         case 'REMOVE_PEOPLE':
             return { ...state, person: [] }
         default:
