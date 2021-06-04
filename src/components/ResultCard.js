@@ -31,7 +31,7 @@ export const ResultCard = ({ movie }) => {
                     </div>
                     <div className="controls">
                         <button
-                            className="btn btn-add"
+                            className="btn btn-add btn-full-width"
                             onClick={() => addMovieToWatchList(movie)}
                             // we used storedValueExists value as the value of "disabled" property of our "Add to watchlist" button, this is
                             // an easy and quick solution for this use case.

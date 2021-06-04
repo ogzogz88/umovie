@@ -117,6 +117,9 @@ body.dark-mode {
   font-size: 1rem;
   padding: 0.5rem 1rem;
 }
+.btn-full-width {
+  width: 100%;
+}
 
 input:focus {
   outline: none;
