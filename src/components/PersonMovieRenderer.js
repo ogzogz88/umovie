@@ -1,12 +1,13 @@
 import React from 'react';
 import { ResultCard } from './ResultCard';
+import { BreadCrumb } from './BreadCrumb';
 
 export const PersonMovieRenderer = ({ personData, personName }) => {
 
 
     return (
         <div className="container movie-container">
-            <div>deneme{personName}</div>
+            <BreadCrumb name={personName} />
             <ul className="results">
                 {
                     personData.map(movie => {
