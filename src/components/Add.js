@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ResultCard } from './ResultCard';
 import { ResultCardPerson } from './ResultCardPerson';
+import { SearchBar } from './SearchBar';
 import { GlobalContext } from '../context/GlobalState';
-
-
-
 
 export const Add = () => {
     const { addPeople, person, removePeople } = useContext(GlobalContext);
@@ -16,12 +14,22 @@ export const Add = () => {
 
     //fetching data only for the componentDidMount, so we used empty array [], as the second argument
     useEffect(() => {
-        const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-EN&page=1`;
         if (person.length === 0) {
-            fetchData(URL, setBestMovies);
+            fetchBestMovies();
         }
 
     }, []);
+
+    const fetchBestMovies = () => {
+        const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-EN&page=1`;
+        fetchData(URL, setBestMovies);
+    }
+
+    const removeAll = () => {
+        setQueryPerson('');
+        setQuery('');
+        removePeople();
+    }
 
     const fetchData = async (URL, setterFunc) => {
         await fetch(URL)
@@ -55,117 +63,76 @@ export const Add = () => {
         setBestMovies([]);
     }
 
+    const dataToRender = [
+        {
+            condition: query !== '' && movies.length > 0,
+            header: "Movies for you!",
+            Component: ResultCard,
+            data: movies
+        },
+        {
+            condition: query === '' && queryPerson === '' && bestMovies.length,
+            header: "Recommended movies!",
+            Component: ResultCard,
+            data: bestMovies
+        },
+        {
+            condition: query === '' && queryPerson !== '',
+            header: "Director and artists information",
+            Component: ResultCardPerson,
+            data: people
+        },
+        {
+            condition: query === '' && queryPerson === '' && people.length > 0,
+            header: "Director and artists information",
+            Component: ResultCardPerson,
+            data: person
+        }
+    ]
+    const renderItems = (data, header, Component) => {
+        return (
+            <div className="container movie-container">
+                <div className='filled-list'>
+                    <h1> {header}</h1>
+                </div>
+                <ul className="results">
+                    {
+                        data && data.map(item => (
+                            <li key={item.id}>
+                                <Component element={item} />
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        );
+    }
 
 
     return (
         <div className='add-page'>
-            <div className='container'>
-                <div className='add-content'>
-                    <div className='input-wrapper'>
-                        <input
-                            type='text' placeholder='Search for a movie.'
-                            value={query}
-                            onChange={onChangeMovie}
-                        />
-                        <button className='btn btn-clear'
-                            onClick={() => { setQuery('') }}
-                        ><i className="fas fa-trash-alt"></i> </button>
-                    </div>
-                </div>
-                <div className='add-content'>
-                    <div className='input-wrapper'>
-                        <input
-                            type='text' placeholder='Search for a director or artist.'
-                            value={queryPerson}
-                            onChange={onChangePerson}
-                        />
-                        <button className='btn btn-clear'
-                            onClick={() => { setQueryPerson('') }}
-                        ><i className="fas fa-trash-alt"></i> </button>
-                    </div>
-                </div>
-            </div>
-
-            {/* the && operator actually returns the value of one of the specified operands, so if this operator is used with non-Boolean values, 
-            it will return a non-Boolean value. */}
-
-            {/* return movies based on search input */}
-            { (query !== '' && movies.length > 0) && (
-                <div className="container movie-container">
-                    <ul className="results">
-                        {
-                            movies.map(movie => (
-                                <li key={movie.id}>
-                                    <ResultCard movie={movie} />
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            )}
-
-            {/*return recommended movies, if search input in empty*/}
+            <SearchBar
+                query={query}
+                onChangeMovie={onChangeMovie}
+                queryPerson={queryPerson}
+                onChangePerson={onChangePerson}
+                setQuery={setQuery}
+                setQueryPerson={setQueryPerson}
+                removeAll={removeAll}
+                fetchBestMovies={fetchBestMovies} />
             {
-                (query === '' && queryPerson === '' && bestMovies.length > 0) && (
-                    <div className="container movie-container">
-                        <div className='filled-list'>
-                            <h1>Recommended movies!</h1>
-                        </div>
-
-                        <ul className="results">
-                            {
-                                bestMovies.map(movie => (
-                                    <li key={movie.id}>
-                                        <ResultCard movie={movie} />
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                )
+                dataToRender[0].condition && renderItems(dataToRender[0].data, dataToRender[0].header, dataToRender[0].Component)
             }
-            {/*return artists or director if query exists*/}
             {
-                (query === '' && queryPerson !== '') && (
-                    <div className="container movie-container">
-                        <div className='filled-list'>
-                            <h1>Director and artists information</h1>
-                        </div>
-
-                        <ul className="results">
-                            {
-                                people.map(person => (
-                                    <li key={person.id}>
-                                        <ResultCardPerson person={person} />
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-
-                )
+                dataToRender[1].condition && renderItems(dataToRender[1].data, dataToRender[1].header, dataToRender[1].Component)
             }
-            {/*return artists or director from existing query*/}
             {
-                (query === '' && queryPerson === '' && people !== null) && (
-                    <div className="container movie-container">
-                        <div className='filled-list'>
-                            <h1>Director and artists information</h1>
-                        </div>
-
-                        <ul className="results">
-                            {
-                                person.map(person => (
-                                    <li key={person.id}>
-                                        <ResultCardPerson person={person} />
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-
-                )
+                dataToRender[2].condition && renderItems(dataToRender[2].data, dataToRender[2].header, dataToRender[2].Component)
             }
+            {
+                dataToRender[3].condition && renderItems(dataToRender[3].data, dataToRender[3].header, dataToRender[3].Component)
+            }
+
         </div>
     )
 }

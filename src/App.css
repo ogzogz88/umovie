@@ -97,7 +97,6 @@ body.dark-mode {
   font-weight: 900;
   margin: 1rem 0 0 0;
 }
-
 .btn-remove:hover {
   color: var(--white);
   background-color: rgb(184, 26, 26);
@@ -116,6 +115,11 @@ body.dark-mode {
   border-radius: 0 5px 5px 0;
   font-size: 1rem;
   padding: 0.5rem 1rem;
+}
+
+.btn-clear-all {
+  border-radius: 5px;
+  width: 250px;
 }
 .btn-full-width {
   width: 100%;
@@ -296,6 +300,7 @@ body.light-mode input::placeholder {
 
 .input-wrapper {
   display: flex;
+  justify-content: center;
 }
 
 .results {
@@ -533,6 +538,10 @@ body.dark-mode hr {
     font-size: 0.7rem;
     padding: 0.4rem 0.6rem;
   }
+  .btn-clear-all {
+    border-radius: 5px;
+    width: 100%;
+  }
   body.light-mode input::placeholder,
   body.dark-mode input::placeholder {
     font-size: 14px;
@@ -576,6 +585,10 @@ body.dark-mode hr {
     border-radius: 0 5px 5px 0;
     font-size: 0.7rem;
     padding: 0.4rem 0.6rem;
+  }
+  .btn-clear-all {
+    border-radius: 5px;
+    width: 100%;
   }
   body.light-mode input::placeholder,
   body.dark-mode input::placeholder {

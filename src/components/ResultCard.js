@@ -2,37 +2,37 @@ import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState';
 
 
-export const ResultCard = ({ movie }) => {
+export const ResultCard = ({ element }) => {
     const { addMovieToWatchList, watchlist, watched } = useContext(GlobalContext);
 
     //prevent adding a movie more than one. we control the watchlist and if the movie exists, storedMovieExists = TRUE
     let allMovies = [...watchlist, ...watched];
-    let storedMovieExists = allMovies.find(item => item.id === movie.id);
+    let storedMovieExists = allMovies.find(item => item.id === element.id);
 
     return (
         <>
             <div className='result-card'>
                 <div className="poster-wrapper">
-                    {movie.poster_path ? (
-                        <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={`${movie.title} poster`} />)
+                    {element.poster_path ? (
+                        <img src={`https://image.tmdb.org/t/p/w200${element.poster_path}`} alt={`${element.title} poster`} />)
                         : <div className='filler-poster'></div>
                     }
                 </div>
                 <div className="info">
                     <div className="header">
-                        <h3 className="title">{movie.title}</h3>
+                        <h3 className="title">{element.title}</h3>
                         <h4 className="release-date">
 
-                            {movie.release_date ? movie.release_date.substring(0, 4) : '-'}
+                            {element.release_date ? element.release_date.substring(0, 4) : '-'}
                         </h4>
-                        <p className="movie-info">Average vote: {movie.vote_average}</p>
-                        <p className="movie-info">Language: {movie.original_language}</p>
+                        <p className="movie-info">Average vote: {element.vote_average}</p>
+                        <p className="movie-info">Language: {element.original_language}</p>
 
                     </div>
                     <div className="controls">
                         <button
                             className="btn btn-add btn-full-width"
-                            onClick={() => addMovieToWatchList(movie)}
+                            onClick={() => addMovieToWatchList(element)}
                             // we used storedValueExists value as the value of "disabled" property of our "Add to watchlist" button, this is
                             // an easy and quick solution for this use case.
                             disabled={storedMovieExists}>

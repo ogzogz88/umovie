@@ -12,7 +12,7 @@ export const PersonMovieRenderer = ({ personData, personName }) => {
                     personData.map(movie => {
                         return (
                             <li key={movie.id}>
-                                <ResultCard movie={movie} />
+                                <ResultCard element={movie} />
                             </li>
                         );
                     })
