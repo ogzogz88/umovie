@@ -17,6 +17,7 @@ export const Add = () => {
         if (person.length === 0) {
             fetchBestMovies();
         }
+        setPeople(person);
     }, []);
 
     const fetchBestMovies = () => {
