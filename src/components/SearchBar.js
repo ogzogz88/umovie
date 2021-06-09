@@ -34,8 +34,8 @@ export const SearchBar = ({ query, onChangeMovie, queryPerson, onChangePerson, s
                             removeAll();
                             fetchBestMovies();
                         }}
-                        style={{ display: "flex", justifyContent: "space-between" }}
-                    >CLEAR RESULTS<i className="fas fa-trash-alt"></i> </button>
+                        style={{ display: "flex", justifyContent: "space-between", fontWeight: 'lighter', textTransform: 'none', padding: '1rem' }}
+                    >Clear All<i className="fas fa-trash-alt"></i> </button>
                 </div>
             </div>
         </div>
