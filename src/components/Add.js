@@ -17,7 +17,6 @@ export const Add = () => {
         if (person.length === 0) {
             fetchBestMovies();
         }
-
     }, []);
 
     const fetchBestMovies = () => {
@@ -37,7 +36,7 @@ export const Add = () => {
             .then(items => {
                 if (!items.errors) {
                     setterFunc(items.results);
-                    if (setterFunc == setPeople) {
+                    if (setterFunc === setPeople) {
                         addPeople(items.results);
                     }
                 } else setterFunc([]);
@@ -71,7 +70,7 @@ export const Add = () => {
             data: movies
         },
         {
-            condition: query === '' && queryPerson === '' && bestMovies.length,
+            condition: query === '' && queryPerson === '' && bestMovies.length > 0,
             header: "Recommended movies!",
             Component: ResultCard,
             data: bestMovies
@@ -97,7 +96,7 @@ export const Add = () => {
                 </div>
                 <ul className="results">
                     {
-                        data && data.map(item => (
+                        data.map(item => (
                             <li key={item.id}>
                                 <Component element={item} />
                             </li>

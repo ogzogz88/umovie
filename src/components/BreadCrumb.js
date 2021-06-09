@@ -5,7 +5,9 @@ const GoBackButton = () => {
     let history = useHistory();
     return (
         <>
-            <button className="btn btn-goback" onClick={() => history.goBack()}> <i className="fas fa-arrow-left" style={{ fontSize: "1rem" }}></i> <span>Go Back</span></button>
+            <button className="btn btn-goback" onClick={() => history.goBack()}>
+                <i className="fas fa-arrow-left" style={{ fontSize: "1rem" }}></i> <span>Go Back</span>
+            </button>
         </>
     );
 };

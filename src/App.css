@@ -134,7 +134,7 @@ body.dark-mode {
 
 .btn-clear {
   border-radius: 0 5px 5px 0;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 0.5rem 1rem;
 }
 
@@ -360,6 +360,7 @@ body.light-mode input::placeholder {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 180px;
 }
 
 .result-card .info .title {
@@ -577,6 +578,7 @@ body.dark-mode hr {
   .btn-clear-all {
     border-radius: 5px;
     width: 100%;
+    font-size: 0.6rem;
   }
   body.light-mode input::placeholder,
   body.dark-mode input::placeholder {
