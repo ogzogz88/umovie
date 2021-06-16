@@ -23,7 +23,10 @@ export const SearchBar = ({ query, onChangeMovie, queryPerson, onChangePerson, s
                         onChange={onChangePerson}
                     />
                     <button className='btn btn-clear'
-                        onClick={() => { setQueryPerson('') }}
+                        onClick={() => {
+                            setQueryPerson('');
+                            fetchBestMovies();
+                        }}
                     ><i className="fas fa-trash-alt"></i> </button>
                 </div>
             </div>
