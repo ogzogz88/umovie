@@ -11,7 +11,7 @@ export const ResultCardPerson = ({ element }) => {
                         : <div className='filler-poster'></div>
                     }
                 </div>
-                <div className="info">
+                <div className="info info-person">
                     <div className="header">
                         <h3 className="title">{element.name}</h3>
                         <p className="movie-info">Job: {element.known_for_department}</p>

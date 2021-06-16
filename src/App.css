@@ -362,6 +362,9 @@ body.light-mode input::placeholder {
   justify-content: space-between;
   height: 180px;
 }
+.result-card .info.info-person {
+  height: auto;
+}
 
 .result-card .info .title {
   font-size: 1rem;
